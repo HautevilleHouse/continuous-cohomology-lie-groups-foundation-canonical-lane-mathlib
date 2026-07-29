@@ -1,0 +1,14 @@
+import canonicalLaneMathlib.AdmissibleClass
+
+namespace HautevilleHouse
+namespace ContinuousCohomologyLieGroupsFoundationCanonicalLaneLean
+
+def ConstrainedContinuousCohomologyClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_continuous_cohomology_endgame (A : AdmissibleClass) :
+    ConstrainedContinuousCohomologyClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end ContinuousCohomologyLieGroupsFoundationCanonicalLaneLean
+end HautevilleHouse
